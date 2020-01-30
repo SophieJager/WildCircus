@@ -32,7 +32,6 @@ class HomeController extends AbstractController
             'aboutus' => $aboutRepo->findOneBy(['active'=>1]),
             'groups' => $groupRepo -> findBy(['active'=>1]),
             'prices' => $pricesRepo->findAll(),
-            'tests'=>$pricesRepo->joinPrices(),
         ]);
     }
 }

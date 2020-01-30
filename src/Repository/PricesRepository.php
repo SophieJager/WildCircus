@@ -19,17 +19,6 @@ class PricesRepository extends ServiceEntityRepository
         parent::__construct($registry, Prices::class);
     }
 
-    public function joinPrices()
-    {
-        $query = $this->createQueryBuilder('p')
-            ->select('p.price')
-            ->addSelect('g.name as group')
-            ->join('p.groups', 'g')
-            ->getQuery();
-
-        return $query->getResult();
-    }
-
     /*
     public function findOneBySomeField($value): ?Prices
     {

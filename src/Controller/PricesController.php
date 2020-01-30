@@ -17,6 +17,8 @@ class PricesController extends AbstractController
 {
     /**
      * @Route("/", name="prices_index", methods={"GET"})
+     * @param PricesRepository $pricesRepository
+     * @return Response
      */
     public function index(PricesRepository $pricesRepository): Response
     {
@@ -27,6 +29,8 @@ class PricesController extends AbstractController
 
     /**
      * @Route("/new", name="prices_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -50,6 +54,8 @@ class PricesController extends AbstractController
 
     /**
      * @Route("/{id}", name="prices_show", methods={"GET"})
+     * @param Prices $price
+     * @return Response
      */
     public function show(Prices $price): Response
     {
@@ -60,6 +66,9 @@ class PricesController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="prices_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Prices $price
+     * @return Response
      */
     public function edit(Request $request, Prices $price): Response
     {
@@ -80,6 +89,9 @@ class PricesController extends AbstractController
 
     /**
      * @Route("/{id}", name="prices_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Prices $price
+     * @return Response
      */
     public function delete(Request $request, Prices $price): Response
     {

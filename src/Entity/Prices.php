@@ -24,7 +24,12 @@ class Prices
     /**
      * @ORM\Column(type="integer")
      */
-    private $price;
+    private $priceWeek;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $priceWeekEnd;
 
     public function getId(): ?int
     {
@@ -43,14 +48,26 @@ class Prices
         return $this;
     }
 
-    public function getPrice(): ?int
+    public function getPriceWeek(): ?int
     {
-        return $this->price;
+        return $this->priceWeek;
     }
 
-    public function setPrice(int $price): self
+    public function setPriceWeek(int $priceWeek): self
     {
-        $this->price = $price;
+        $this->priceWeek = $priceWeek;
+
+        return $this;
+    }
+
+    public function getPriceWeekEnd(): ?int
+    {
+        return $this->priceWeekEnd;
+    }
+
+    public function setPriceWeekEnd(int $priceWeekEnd): self
+    {
+        $this->priceWeekEnd = $priceWeekEnd;
 
         return $this;
     }

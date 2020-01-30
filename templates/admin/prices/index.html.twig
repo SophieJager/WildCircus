@@ -9,9 +9,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Days</th>
                 <th>Group</th>
-                <th>Price</th>
+                <th>Price Week</th>
+                <th>Price Week-End</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,9 +19,9 @@
         {% for price in prices %}
             <tr>
                 <td>{{ price.id }}</td>
-                <td>{{ price.day.name }}</td>
                 <td>{{ price.groups.name }}</td>
-                <td>{{ price.price }}</td>
+                <td>{{ price.priceWeek }}</td>
+                <td>{{ price.priceWeekEnd }}</td>
                 <td>
                     <a href="{{ path('prices_show', {'id': price.id}) }}">show</a>
                     <a href="{{ path('prices_edit', {'id': price.id}) }}">edit</a>

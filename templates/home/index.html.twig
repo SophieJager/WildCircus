@@ -31,36 +31,26 @@
         <table class="table">
             <thead>
             <tr>
-                <th>&nbsp;</th>
-                {% for group in groups %}
-                    <th>{{ group.name }}</th>
-                {% endfor %}
+                <th></th>
+                <th>Week</th>
+                <th>Week-End</th>
             </tr>
             </thead>
             <tbody>
-
-            <tr>
-                <th>Week (except Wednesday)</th>
-                <td>15€</td>
-                <td>7€</td>
-                <td>12€/person</td>
-                <td>5€/child</td>
-            </tr>
-            <tr>
-                <th>Week-end and Wednesday</th>
-                <td>20€</td>
-                <td>10€</td>
-                <td>17€/person</td>
-                <td>7€/child</td>
-            </tr>
+            {% for price in prices %}
+                <tr>
+                    <td>{{ price.groups.name }}</td>
+                    <td>{{ price.priceWeek }}</td>
+                    <td>{{ price.priceWeekEnd }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
             </tbody>
-
         </table>
 
     </section>
 
-    {% for price in prices %}
-        {{ price.groups.name }}
-        {{ price.price }}
-    {% endfor %}
 {% endblock %}
