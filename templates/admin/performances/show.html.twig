@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/base.html.twig' %}
 
 {% block title %}Performances{% endblock %}
 
@@ -30,5 +30,5 @@
 
     <a href="{{ path('performances_edit', {'id': performance.id}) }}">edit</a>
 
-    {{ include('performances/_delete_form.html.twig') }}
+    {{ include('admin/performances/_delete_form.html.twig') }}
 {% endblock %}

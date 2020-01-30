@@ -11,16 +11,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/prices/group")
+ * @Route("/admin/pricesgroup")
  */
 class PricesGroupController extends AbstractController
 {
     /**
      * @Route("/", name="prices_group_index", methods={"GET"})
+     * @param PricesGroupRepository $pricesGroupRepository
+     * @return Response
      */
     public function index(PricesGroupRepository $pricesGroupRepository): Response
     {
-        return $this->render('prices_group/index.html.twig', [
+        return $this->render('admin/prices_group/index.html.twig', [
             'prices_groups' => $pricesGroupRepository->findAll(),
         ]);
     }
@@ -42,7 +44,7 @@ class PricesGroupController extends AbstractController
             return $this->redirectToRoute('prices_group_index');
         }
 
-        return $this->render('prices_group/new.html.twig', [
+        return $this->render('admin/prices_group/new.html.twig', [
             'prices_group' => $pricesGroup,
             'form' => $form->createView(),
         ]);
@@ -53,7 +55,7 @@ class PricesGroupController extends AbstractController
      */
     public function show(PricesGroup $pricesGroup): Response
     {
-        return $this->render('prices_group/show.html.twig', [
+        return $this->render('admin/prices_group/show.html.twig', [
             'prices_group' => $pricesGroup,
         ]);
     }
@@ -72,7 +74,7 @@ class PricesGroupController extends AbstractController
             return $this->redirectToRoute('prices_group_index');
         }
 
-        return $this->render('prices_group/edit.html.twig', [
+        return $this->render('admin/prices_group/edit.html.twig', [
             'prices_group' => $pricesGroup,
             'form' => $form->createView(),
         ]);

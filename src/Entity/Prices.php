@@ -17,11 +17,6 @@ class Prices
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\PricesDay", inversedBy="prices")
-     */
-    private $day;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\PricesGroup", inversedBy="prices")
      */
     private $groups;
@@ -34,18 +29,6 @@ class Prices
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getDay(): ?PricesDay
-    {
-        return $this->day;
-    }
-
-    public function setDay(?PricesDay $day): self
-    {
-        $this->day = $day;
-
-        return $this;
     }
 
     public function getGroups(): ?PricesGroup

@@ -16,7 +16,7 @@ class AboutUsType extends AbstractType
             ->add('title')
             ->add('description')
             ->add('active', ChoiceType::class, [
-                'choices' => ['inactive'=>0, 'active' => 1]
+                'choices' => ['inactive' => 0, 'active' => 1]
             ])
         ;
     }

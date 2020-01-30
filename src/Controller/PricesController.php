@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/prices")
+ * @Route("/admin/prices")
  */
 class PricesController extends AbstractController
 {
@@ -20,7 +20,7 @@ class PricesController extends AbstractController
      */
     public function index(PricesRepository $pricesRepository): Response
     {
-        return $this->render('prices/index.html.twig', [
+        return $this->render('admin/prices/index.html.twig', [
             'prices' => $pricesRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class PricesController extends AbstractController
             return $this->redirectToRoute('prices_index');
         }
 
-        return $this->render('prices/new.html.twig', [
+        return $this->render('admin/prices/new.html.twig', [
             'price' => $price,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class PricesController extends AbstractController
      */
     public function show(Prices $price): Response
     {
-        return $this->render('prices/show.html.twig', [
+        return $this->render('admin/prices/show.html.twig', [
             'price' => $price,
         ]);
     }
@@ -72,7 +72,7 @@ class PricesController extends AbstractController
             return $this->redirectToRoute('prices_index');
         }
 
-        return $this->render('prices/edit.html.twig', [
+        return $this->render('admin/prices/edit.html.twig', [
             'price' => $price,
             'form' => $form->createView(),
         ]);

@@ -58,16 +58,6 @@ nav
 nav a{
     text-shadow: 5px 5px 5px black;
 }
-a
-{
-    color:white;
-
-}
-a:hover
-{
-    font-size:1.2em;
-    color:	rgb(52, 40, 9);
-}
 
 .horizon
 {	display: flex;
@@ -118,48 +108,6 @@ button {
 button:hover {
     background-color: rgb(254,118,205);
 }
-
-
-
-
-
-table
-{
-    border: white 2px solid;
-    width: 100%;
-    max-width: 800px;
-    text-align:center;
-    border-collapse: collapse;
-    margin-left:auto;
-    margin-right:auto;
-
-
-}
-
-thead{
-    border-bottom:5px solid grey;
-}
-
-tbody th{
-    border-right:5px solid grey;
-}
-
-thead th:first-child {
-    background-color:white;
-    border-right:5px solid grey;
-}
-
-th{
-    background-color:rgb(255, 245, 220);
-    border:1px grey solid;
-    width:20%;
-}
-td
-{
-    padding: 10px;
-    border:1px grey solid;
-}
-
 
 footer
 {

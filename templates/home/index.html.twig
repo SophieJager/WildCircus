@@ -1,22 +1,66 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{#                'performances' => $perfRepo->findBy(['active'=>1]),
-            'aboutus' => $aboutRepo->findBy(['active'=>1]),
-            'prices' => $pricesRepo->findAll()#}
-    {% for performance in performances %}
-        {{ performance.title }}
-        {{ performance.description }}
-    {% endfor %}
+    <section id="performances">
+        <h2>Performances</h2>
+        <ul class="horizon">
+            <!-- performance 1 -->
+            {% for performance in performances %}
+                <li class="element">
+                    <h3>{{ performance.title }}</h3>
+                    <p>{{ performance.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="illustration1">
+        </div>
+    </section>
 
-    {% for about in aboutus %}
-        {{ about.title }}
-        {{ about.description }}
-    {% endfor %}
+    <section id="aboutus">
+        <h2>About Us</h2>
+        <div class="illustration2">
+            <p>{{ aboutus.description }}</p>
+        </div>
+    </section>
+
+
+
+    <section id="prices">
+        <h2>Prices</h2>
+        <div class="illustration3"></div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>&nbsp;</th>
+                {% for group in groups %}
+                    <th>{{ group.name }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <th>Week (except Wednesday)</th>
+                <td>15€</td>
+                <td>7€</td>
+                <td>12€/person</td>
+                <td>5€/child</td>
+            </tr>
+            <tr>
+                <th>Week-end and Wednesday</th>
+                <td>20€</td>
+                <td>10€</td>
+                <td>17€/person</td>
+                <td>7€/child</td>
+            </tr>
+            </tbody>
+
+        </table>
+
+    </section>
 
     {% for price in prices %}
-        {{ price.day }}
-        {{ price.groups }}
+        {{ price.groups.name }}
         {{ price.price }}
     {% endfor %}
 {% endblock %}

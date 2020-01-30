@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/aboutus")
+ * @Route("/admin/aboutus")
  */
 class AboutUsController extends AbstractController
 {
@@ -20,7 +20,7 @@ class AboutUsController extends AbstractController
      */
     public function index(AboutUsRepository $aboutUsRepository): Response
     {
-        return $this->render('about_us/index.html.twig', [
+        return $this->render('admin/about_us/index.html.twig', [
             'aboutuses' => $aboutUsRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class AboutUsController extends AbstractController
             return $this->redirectToRoute('about_us_index');
         }
 
-        return $this->render('about_us/new.html.twig', [
+        return $this->render('admin/about_us/new.html.twig', [
             'about_u' => $aboutU,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class AboutUsController extends AbstractController
      */
     public function show(AboutUs $aboutU): Response
     {
-        return $this->render('about_us/show.html.twig', [
+        return $this->render('admin/about_us/show.html.twig', [
             'about_u' => $aboutU,
         ]);
     }
@@ -72,7 +72,7 @@ class AboutUsController extends AbstractController
             return $this->redirectToRoute('about_us_index');
         }
 
-        return $this->render('about_us/edit.html.twig', [
+        return $this->render('admin/about_us/edit.html.twig', [
             'about_u' => $aboutU,
             'form' => $form->createView(),
         ]);

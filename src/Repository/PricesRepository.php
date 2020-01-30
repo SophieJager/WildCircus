@@ -19,22 +19,16 @@ class PricesRepository extends ServiceEntityRepository
         parent::__construct($registry, Prices::class);
     }
 
-    // /**
-    //  * @return Prices[] Returns an array of Prices objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function joinPrices()
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $query = $this->createQueryBuilder('p')
+            ->select('p.price')
+            ->addSelect('g.name as group')
+            ->join('p.groups', 'g')
+            ->getQuery();
+
+        return $query->getResult();
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Prices

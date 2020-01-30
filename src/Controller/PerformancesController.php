@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/performances")
+ * @Route("/admin/performances")
  */
 class PerformancesController extends AbstractController
 {
@@ -20,7 +20,7 @@ class PerformancesController extends AbstractController
      */
     public function index(PerformancesRepository $performancesRepository): Response
     {
-        return $this->render('performances/index.html.twig', [
+        return $this->render('admin/performances/index.html.twig', [
             'performances' => $performancesRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class PerformancesController extends AbstractController
             return $this->redirectToRoute('performances_index');
         }
 
-        return $this->render('performances/new.html.twig', [
+        return $this->render('admin/performances/new.html.twig', [
             'performance' => $performance,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class PerformancesController extends AbstractController
      */
     public function show(Performances $performance): Response
     {
-        return $this->render('performances/show.html.twig', [
+        return $this->render('admin/performances/show.html.twig', [
             'performance' => $performance,
         ]);
     }
@@ -72,7 +72,7 @@ class PerformancesController extends AbstractController
             return $this->redirectToRoute('performances_index');
         }
 
-        return $this->render('performances/edit.html.twig', [
+        return $this->render('admin/performances/edit.html.twig', [
             'performance' => $performance,
             'form' => $form->createView(),
         ]);

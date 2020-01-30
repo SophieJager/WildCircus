@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/base.html.twig' %}
 
 {% block title %}Prices{% endblock %}
 
@@ -12,6 +12,14 @@
                 <td>{{ price.id }}</td>
             </tr>
             <tr>
+                <th>Day</th>
+                <td>{{ price.day.name }}</td>
+            </tr>
+            <tr>
+                <th>Group</th>
+                <td>{{ price.groups.name }}</td>
+            </tr>
+            <tr>
                 <th>Price</th>
                 <td>{{ price.price }}</td>
             </tr>
@@ -22,5 +30,5 @@
 
     <a href="{{ path('prices_edit', {'id': price.id}) }}">edit</a>
 
-    {{ include('prices/_delete_form.html.twig') }}
+    {{ include('admin/prices/_delete_form.html.twig') }}
 {% endblock %}

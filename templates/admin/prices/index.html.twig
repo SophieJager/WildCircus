@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/base.html.twig' %}
 
 {% block title %}Prices index{% endblock %}
 
@@ -9,6 +9,8 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Days</th>
+                <th>Group</th>
                 <th>Price</th>
                 <th>actions</th>
             </tr>
@@ -17,6 +19,8 @@
         {% for price in prices %}
             <tr>
                 <td>{{ price.id }}</td>
+                <td>{{ price.day.name }}</td>
+                <td>{{ price.groups.name }}</td>
                 <td>{{ price.price }}</td>
                 <td>
                     <a href="{{ path('prices_show', {'id': price.id}) }}">show</a>

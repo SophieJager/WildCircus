@@ -19,6 +19,18 @@ class PricesGroupRepository extends ServiceEntityRepository
         parent::__construct($registry, PricesGroup::class);
     }
 
+
+    public function findWithModules()
+    {
+        $query = $this->createQueryBuilder('g')
+            ->select('p.price')
+            ->addSelect('g.name')
+            ->join('g.prices', 'p')
+            ->getQuery();
+
+        return $query->getResult();
+    }
+
     // /**
     //  * @return PricesGroup[] Returns an array of PricesGroup objects
     //  */
