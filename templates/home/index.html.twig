@@ -1,10 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{#    <li><a href="#performances">Performances</a></li>
-    <li><a href="#aboutus">About Us</a></li>
-    <li><a href="#prices">Prices</a></li>
-    <li><a href="#contact">Contact</a></li>#}
+{#                'performances' => $perfRepo->findBy(['active'=>1]),
+            'aboutus' => $aboutRepo->findBy(['active'=>1]),
+            'prices' => $pricesRepo->findAll()#}
+    {% for performance in performances %}
+        {{ performance.title }}
+        {{ performance.description }}
+    {% endfor %}
 
+    {% for about in aboutus %}
+        {{ about.title }}
+        {{ about.description }}
+    {% endfor %}
 
+    {% for price in prices %}
+        {{ price.day }}
+        {{ price.groups }}
+        {{ price.price }}
+    {% endfor %}
 {% endblock %}
