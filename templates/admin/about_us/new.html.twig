@@ -8,4 +8,6 @@
     {{ include('admin/about_us/_form.html.twig') }}
 
     <a href="{{ path('about_us_index') }}">back to list</a>
+
+    <script>CKEDITOR.replace( 'about_us[description]' );</script>
 {% endblock %}

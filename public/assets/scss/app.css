@@ -1,0 +1,23 @@
+.horizon
+{	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center top;
+    padding-top:10px;
+    border-bottom: dotted 3px;
+    border-radius:25px;
+    border-top:dotted 3px;
+}
+
+.element
+{
+    width:30%;
+    height:100%;
+    text-align:center top;
+
+}
+
+.table-prices {
+    max-width:400px !important;
+}

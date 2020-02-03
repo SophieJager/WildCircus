@@ -10,4 +10,6 @@
     <a href="{{ path('about_us_index') }}">back to list</a>
 
     {{ include('admin/about_us/_delete_form.html.twig') }}
+
+    <script>CKEDITOR.replace( 'about_us[description]' );</script>
 {% endblock %}

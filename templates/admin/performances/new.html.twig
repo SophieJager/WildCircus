@@ -8,4 +8,6 @@
     {{ include('admin/performances/_form.html.twig') }}
 
     <a href="{{ path('performances_index') }}">back to list</a>
+
+    <script>CKEDITOR.replace( 'performances[description]' );</script>
 {% endblock %}

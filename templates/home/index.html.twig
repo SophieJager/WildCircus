@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <section id="performances">
+    <section id="performances" class="container">
         <h2>Performances</h2>
         <ul class="horizon">
             <!-- performance 1 -->
             {% for performance in performances %}
                 <li class="element">
-                    <h3>{{ performance.title }}</h3>
-                    <p>{{ performance.description }}</p>
+                    <h3>{{ performance.title|raw }}</h3>
+                    <p>{{ performance.description|raw }}</p>
                 </li>
             {% endfor %}
         </ul>
@@ -16,7 +16,8 @@
         </div>
     </section>
 
-    <section id="aboutus">
+
+    <section id="aboutus" class="container">
         <h2>About Us</h2>
         <div class="illustration2">
             <p>{{ aboutus.description }}</p>
@@ -25,10 +26,10 @@
 
 
 
-    <section id="prices">
+    <section id="prices" class="container">
         <h2>Prices</h2>
         <div class="illustration3"></div>
-        <table class="table">
+        <table class="table table-prices">
             <thead>
             <tr>
                 <th></th>
@@ -53,4 +54,24 @@
 
     </section>
 
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <form method="post">
+            <div>
+                <label for="name">Name</label><br> <input type="text" id="name" name="user_name">
+            </div>
+            <div>
+                <label for="mail">Email</label><br> <input type="email" id="mail" name="user_mail">
+            </div>
+            <div>
+                <label for="phone">Phone Number</label><br> <input type="text" id="phone" name="user_phone">
+            </div>
+            <div>
+                <label for="msg">Message</label><br> <textarea id="msg" name="user_message"></textarea>
+            </div>
+            <div class="button">
+                <button type="submit">Send your message</button>
+            </div>
+        </form>
+    </section>
 {% endblock %}
