@@ -17,11 +17,25 @@
         {% endblock %}
     </head>
     <body>
-    <a href="{{ path('performances_index') }}">Edit Performances</a>
-    <a href="{{ path('about_us_index') }}">Edit About Us</a>
-    <a href="{{ path('prices_index') }}">Edit Prices</a>
-    <a href="{{ path('prices_group_index') }}">Edit Prices Group</a>
-    <a href="{{ path('admin_index') }}">Retour</a>
+    <header>
+        <nav class="navbar navbar-inverse navbar-expand-md bg-dark navbar-dark" id="top-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ path('home') }}">Return to site</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item"><a href="{{ path('performances_index') }}">Edit Performances</a></li>
+                        <li class="nav-item"><a href="{{ path('about_us_index') }}">Edit About Us</a></li>
+                        <li class="nav-item"><a href="{{ path('prices_index') }}">Edit Prices</a></li>
+                        <li class="nav-item"><a href="{{ path('prices_group_index') }}">Edit Prices Group</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

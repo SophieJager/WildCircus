@@ -21,3 +21,54 @@
 .table-prices {
     max-width:400px !important;
 }
+
+.illustration1{
+    background:url("https://cdn.pixabay.com/photo/2014/08/06/21/17/acrobats-412011_1280.jpg");
+    opacity:1;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-origin: margin-box;
+    padding:35%;
+    border-radius:25px;
+
+
+}
+.illustration2{
+    background:url("https://cdn.pixabay.com/photo/2017/06/25/20/17/aerial-hoop-2441849_1280.jpg");
+    opacity:1;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-origin: margin-box;
+    padding:25%;
+    padding-bottom:50%;
+    border-radius:25px;
+
+
+}
+.illustration3{
+    background:url("https://cdn.pixabay.com/photo/2017/11/24/10/43/admission-2974645_1280.jpg");
+    opacity:1;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-origin: margin-box;
+    padding:8%;
+    border-radius:25px;
+    margin-bottom:10px;
+
+}
+
+
+.illustration4{
+    background:url("https://cdn.pixabay.com/photo/2016/04/01/08/47/amusement-1298959_1280.png");
+    opacity:0.5;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-origin: margin-box;
+    padding:25%;
+    margin-bottom:-2.5%;
+
+}
