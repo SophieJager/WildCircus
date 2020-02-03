@@ -31,9 +31,8 @@
     background-origin: margin-box;
     padding:35%;
     border-radius:25px;
-
-
 }
+
 .illustration2{
     background:url("https://cdn.pixabay.com/photo/2017/06/25/20/17/aerial-hoop-2441849_1280.jpg");
     opacity:1;
@@ -44,9 +43,8 @@
     padding:25%;
     padding-bottom:50%;
     border-radius:25px;
-
-
 }
+
 .illustration3{
     background:url("https://cdn.pixabay.com/photo/2017/11/24/10/43/admission-2974645_1280.jpg");
     opacity:1;
@@ -57,7 +55,6 @@
     padding:8%;
     border-radius:25px;
     margin-bottom:10px;
-
 }
 
 
@@ -70,5 +67,8 @@
     background-origin: margin-box;
     padding:25%;
     margin-bottom:-2.5%;
+}
 
+ul {
+    list-style: none !important;
 }
