@@ -1,0 +1,15 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Edit AboutUs{% endblock %}
+
+{% block body %}
+    <h1>Edit AboutUs</h1>
+
+    {{ include('admin/about_us/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('about_us_index') }}">back to list</a>
+
+    {{ include('admin/about_us/_delete_form.html.twig') }}
+
+    <script>CKEDITOR.replace( 'about_us[description]' );</script>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}New Performances{% endblock %}
+
+{% block body %}
+    <h1>Create new Performances</h1>
+
+    {{ include('admin/performances/_form.html.twig') }}
+
+    <a href="{{ path('performances_index') }}">back to list</a>
+
+    <script>CKEDITOR.replace( 'performances[description]' );</script>
+{% endblock %}

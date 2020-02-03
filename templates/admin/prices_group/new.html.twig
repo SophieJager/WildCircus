@@ -1,0 +1,11 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}New PricesGroup{% endblock %}
+
+{% block body %}
+    <h1>Create new PricesGroup</h1>
+
+    {{ include('admin/prices_group/_form.html.twig') }}
+
+    <a href="{{ path('prices_group_index') }}">back to list</a>
+{% endblock %}

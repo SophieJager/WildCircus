@@ -1,0 +1,17 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Edit Performances{% endblock %}
+
+{% block body %}
+    <h1>Edit Performances</h1>
+
+    {{ include('admin/performances/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('performances_index') }}">back to list</a>
+
+    {{ include('admin/performances/_delete_form.html.twig') }}
+
+    <script>
+        CKEDITOR.replace( 'performances[description]' );
+    </script>
+{% endblock %}

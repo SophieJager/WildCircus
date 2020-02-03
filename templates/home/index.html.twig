@@ -1,10 +1,76 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{#    <li><a href="#performances">Performances</a></li>
-    <li><a href="#aboutus">About Us</a></li>
-    <li><a href="#prices">Prices</a></li>
-    <li><a href="#contact">Contact</a></li>#}
+    <section id="performances" class="container">
+        <h2>Performances</h2>
+        <ul class="horizon">
+            <!-- performance 1 -->
+            {% for performance in performances %}
+                <li class="element">
+                    <h3>{{ performance.title|raw }}</h3>
+                    <p>{{ performance.description|raw }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="illustration1">
+        </div>
+    </section>
 
 
+    <section id="aboutus" class="container">
+        <h2>About Us</h2>
+        <div class="illustration2"></div>
+        <p class="text-light">{{ aboutus.description|raw }}</p>
+    </section>
+
+
+
+    <section id="prices" class="container">
+        <h2>Prices</h2>
+        <div class="illustration3"></div>
+        <table class="table table-prices">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Week</th>
+                <th>Week-End</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for price in prices %}
+                <tr>
+                    <td>{{ price.groups.name }}</td>
+                    <td>{{ price.priceWeek }}</td>
+                    <td>{{ price.priceWeekEnd }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <form method="post">
+            <div>
+                <label for="name">Name</label><br> <input type="text" id="name" name="user_name">
+            </div>
+            <div>
+                <label for="mail">Email</label><br> <input type="email" id="mail" name="user_mail">
+            </div>
+            <div>
+                <label for="phone">Phone Number</label><br> <input type="text" id="phone" name="user_phone">
+            </div>
+            <div>
+                <label for="msg">Message</label><br> <textarea id="msg" name="user_message"></textarea>
+            </div>
+            <div class="button">
+                <button type="submit">Send your message</button>
+            </div>
+        </form>
+    </section>
 {% endblock %}
